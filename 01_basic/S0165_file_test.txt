@@ -1,0 +1,6 @@
+Navn og Alder liste
+navn: Lars  alder: 1
+navn: Ole  alder: 2
+navn: Kristen  alder: 4
+navn: Jakob  alder: 16
+navn: Henrik  alder: 18
