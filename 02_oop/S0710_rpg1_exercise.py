@@ -36,7 +36,7 @@ Når dit program er færdigt, skal du skubbe det til dit github-repository
 og sammenlign det med lærerens løsning i S0730_rpg1_solution.py
 
 Send derefter denne Teams-besked til din lærer: <filename> færdig
-Fortsæt derefter med den næste fil. test"""
+Fortsæt derefter med den næste fil. tes"""
 
 class Character:
     def __init__(self, name, max_health, _current_health, attackpower):
