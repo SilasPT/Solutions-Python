@@ -46,18 +46,51 @@ class Character:
         self.attackpower = attackpower
 
     def gethit(self, attacker):
-        self.current_health =- attacker.attackpower
+        self._current_health -= attacker.attackpower
 
     def hit(self, target):
         target.gethit(self)
+
+    def getheal(self, attacker):
+        self._current_health += attacker.healpower
 
     def __repr__(self):
         return f"Character: {self.name=} {self.max_health=} {self._current_health=} {self.attackpower=}"
 
     def showstats(self):
-        print(Character)
+        print(self)
 
-attacker_john = Character(1, 40 , 40 , 20  )
+class Healer(Character):
+     def __init__(self, name, max_health, _current_health, attackpower, healpower):
+         self.healpower = healpower
+         self.name = name
+         self.max_health = max_health
+         self._current_health = _current_health
+         self.attackpower = attackpower
+
+     def heal(self, target):
+         target.getheal(self)
+
+     def __repr__(self):
+        return f"Character: {self.name=} {self.max_health=} {self._current_health=} {self.attackpower=} {self.healpower=}"
 
 
 
+
+
+attacker_john = Character("john", 40 , 40 , 20  )
+healer_joe = Healer("joe", 40 , 40 , 20,   20 )
+dummy = Character("dummy", 40 , 40 , 0 )
+
+dummy.showstats()
+healer_joe.showstats()
+attacker_john.showstats()
+
+attacker_john.hit(dummy)
+
+dummy.showstats()
+attacker_john.showstats()
+
+healer_joe.heal(dummy)
+
+dummy.showstats()
