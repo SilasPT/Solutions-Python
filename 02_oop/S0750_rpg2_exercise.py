@@ -31,3 +31,73 @@ Når dit program er færdigt, skal du skubbe det til dit github-repository.
 Send derefter denne Teams-besked til din lærer: <filename> done
 Fortsæt derefter med den næste fil."""
 
+class Character:
+    def __init__(self, name, max_health, _current_health, attackpower):
+        self.name = name
+        self.max_health = max_health
+        self._current_health = _current_health
+        self.attackpower = attackpower
+
+    def gethit(self, attacker):
+        self._current_health -= attacker.attackpower
+        print(self.name + " gets hit by the attack of " + attacker.name)
+
+    def hit(self, target):
+        target.gethit(self)
+
+    def getheal(self, attacker):
+        self._current_health += attacker.healpower
+
+    def __repr__(self):
+        return f"Character: {self.name=} {self.max_health=} {self._current_health=} {self.attackpower=}"
+
+    def showstats(self):
+        print(self)
+
+class Healer(Character):
+     def __init__(self, name, max_health, _current_health, attackpower, special_power):
+         self.healpower = special_power
+         self.name = name
+         self.max_health = max_health
+         self._current_health = _current_health
+         self.attackpower = attackpower
+
+     def heal(self, target):
+         target.getheal(self)
+
+     def __repr__(self):
+        return f"Character: {self.name=} {self.max_health=} {self._current_health=} {self.attackpower=} {self.healpower=}"
+
+
+class Magican(Character):
+    def __init__(self, name, max_health, _current_health, attackpower, special_power):
+        self.manapower = special_power
+        self.name = name
+        self.max_health = max_health
+        self._current_health = _current_health
+        self.attackpower = attackpower
+
+    def spellattack(self, target):
+        target.gethit * self.manapower
+        print(self.name + " hit " + target.name + " with a spell for " + self.attackpower * self.manapower + " damage")
+        self.manapower -= 1
+
+    def __repr__(self):
+        return f"Character: {self.name=} {self.max_health=} {self._current_health=} {self.attackpower=} {self.manapower=}"
+
+class Hunter(Character):
+    def __init__(self, name, max_health, _current_health, attackpower, special_power):
+        self.dodges = special_power
+        self.name = name
+        self.max_health = max_health
+        self._current_health = _current_health
+        self.attackpower = attackpower
+
+    def gethit(self, attacker):
+        if self.dodges > 0:
+            print( self.name + " dodges the attack of " + attacker.name)
+            self.dodges -= 1
+        else:
+            self._current_health -= attacker.attackpower
+            print( self.name + " gets hit by the attack of " + attacker.name)
+
