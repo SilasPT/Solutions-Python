@@ -78,10 +78,12 @@ class Magican(Character):
         self.attackpower = attackpower
 
     def spellattack(self, target):
-        if target.manapower > 0
+        if target.manapower > 0:
             target.gethit * self.manapower
             print(self.name + " hit " + target.name + " with a spell for " + self.attackpower * self.manapower + " damage")
             self.manapower -= 1
+        else:
+            print(self.name + " dont have any mana left to cast")
 
     def __repr__(self):
         return f"Character: {self.name=} {self.max_health=} {self._current_health=} {self.attackpower=} {self.manapower=}"
@@ -102,3 +104,5 @@ class Hunter(Character):
             self._current_health -= attacker.attackpower
             print( self.name + " gets hit by the attack of " + attacker.name)
 
+Joe_H = Hunter(Joe, 40, 40, 15, 5)
+Jim_M = Magican(Jim, 30, 30, 10, 5)
