@@ -66,7 +66,7 @@ def pyramid2(lines):
          print(67)
 
 pyramid2(1)
-
+1
 #numbers = [1, 1]
 #print(numbers, sum(numbers))
 #if numbers[0]+numbers[1] == 2:
