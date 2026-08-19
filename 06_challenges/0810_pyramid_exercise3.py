@@ -37,33 +37,28 @@ Hvis du går i stå, så spørg google, de andre elever, en AI eller læreren.
 
 Når dit program er færdigt, skal du skubbe det til dit github-repository.
 """
+import numbers
+from encodings.punycode import insertion_sort
+from operator import length_hint
+
 
 def pyramid(lines):
     numbers=[1,1]
-    count=0
-    startnumber = 2
+    count=1
+    startnumber = 1
     globalcount= 0
+    print(len(numbers))
     print(numbers, sum(numbers), startnumber)
     newnumbers=numbers.copy()
 
-    while lines>globalcount:
-        print(count, "count")
-        print(numbers, newnumbers,"test")
-        while numbers[1+count]<len(numbers):
-            if numbers[(0 + count)] + numbers[1 + count] == startnumber:
-                newnumbers.insert(count + 1, startnumber)
-                count += 1
-                print("repeated")
-            else:
-                print("here")
-
+    for numbers in numbers:
+        if numbers + numbers == startnumber:
+            newnumbers.insert(1, startnumber)
+            count+=1
+            print(newnumbers)
         else:
-            print("line done")
-            numbers=newnumbers.copy()
-            print(numbers, sum(numbers), startnumber)
-            startnumber+=1
+            print(newnumbers)
+            print("newline")
             count=0
-            globalcount+=1
-            print(count, "count")
-    print("end")
-pyramid(4)
+
+pyramid(1)

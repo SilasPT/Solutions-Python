@@ -49,21 +49,20 @@ def pyramid(lines):
     while lines>globalcount:
         print(count, "count")
         print(numbers, newnumbers,"test")
-        while numbers[1+count]<len(numbers):
-            if numbers[(0 + count)] + numbers[1 + count] == startnumber:
-                newnumbers.insert(count + 1, startnumber)
-                count += 1
-                print("repeated")
-            else:
-                print("here")
-
-        else:
+        if numbers[1+count]==len(numbers):
             print("line done")
-            numbers=newnumbers.copy()
+            numbers = newnumbers.copy()
             print(numbers, sum(numbers), startnumber)
-            startnumber+=1
-            count=0
-            globalcount+=1
+            startnumber += 1
+            count = 0
+            globalcount += 1
             print(count, "count")
+        elif numbers[(0 + count)] + numbers[1 + count] == startnumber:
+             newnumbers.insert(count + 1, startnumber)
+             count += 1
+             print("repeated")
+        else:
+             print("here")
+
     print("end")
 pyramid(4)
