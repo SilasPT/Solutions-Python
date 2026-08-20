@@ -51,7 +51,7 @@ def pyramid(lines):
     newnumbers=numbers.copy()
     print(numbers[len(numbers)-1])
 
-    for numbers in range(len(numbers)):
+    for numbers in numbers:
         print(numbers, "here")
         if  numbers+(numbers) == startnumber:
             newnumbers.insert(1, startnumber)
