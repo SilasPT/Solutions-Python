@@ -37,8 +37,6 @@ Hvis du går i stå, så spørg google, de andre elever, en AI eller læreren.
 
 Når dit program er færdigt, skal du skubbe det til dit github-repository.
 """
-import numbers
-from encodings.punycode import insertion_sort
 
 
 def pyramid(lines):
@@ -66,5 +64,5 @@ def pyramid(lines):
                 print(newnumbers)
 
 
-
+#make it so that it makes the newnumbers from nothing.
 pyramid(2)
