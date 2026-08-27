@@ -30,6 +30,7 @@ Hvis du går i stå, så spørg google, de andre elever, en AI eller læreren.
 Når dit program er færdigt, skal du skubbe det til dit github-repository.
 """
 from code import interact
+from hmac import digest
 from site import addsitedir
 
 
@@ -43,5 +44,12 @@ from site import addsitedir
 #
 #        return number1
 
-define(lun)
+def split(num):
+    digits =[int(d) for d in str(num)]
+    print(digits)
+    if isinstance(digits, list):
+        print("actual list")
+    if isinstance(digits[0], int):
+        print(digits[0], "is a integer")
 
+split(678)
