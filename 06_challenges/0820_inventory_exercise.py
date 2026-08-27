@@ -47,24 +47,29 @@ def inventorytest(lines):
 
 def inventory(lines):
     inventory = []
+    inventorypost = []
     globalcount = 0
     number = 0
     while lines > globalcount:
         if not inventory.count(number) == 0:
+            inventorypost.append((inventory.count(number)))
             inventory.append((inventory.count(number)))
-            print("insert 1 ", inventory.count(number))
-            print(inventory)
+            #print("insert 1 ", inventory.count(number))
+            #print(inventory)
             number+=1
 
         elif inventory.count(number) == 0:
+            inventorypost.append((inventory.count(number)))
             inventory.append((inventory.count(number)))
-            inventory.append("new line here)")
+            print(inventorypost)
+            inventorypost.clear()
+            #inventory.append("new line here)")
             number = 0
-            print(number, "number reset")
+            #print(number, "number reset")
             globalcount += 1
-            print(inventory, "insert 2")
-            print("here")
+            #print(inventory, "insert 2")
+            #print("here")
 
 
 
-inventory(4)
+inventory(6)

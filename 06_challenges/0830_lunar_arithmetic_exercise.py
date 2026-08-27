@@ -29,6 +29,19 @@ Hvis du går i stå, så spørg google, de andre elever, en AI eller læreren.
 
 Når dit program er færdigt, skal du skubbe det til dit github-repository.
 """
+from code import interact
+from site import addsitedir
 
 
+#class Lunar_int:
+#    def __init__(self, number1):
+#        self.number1 = number1
+#        pass
+#    def _add_(self, number1, other):
+#        digit=[int(d) for d in str(number1)]
+#
+#
+#        return number1
+
+define(lun)
 
