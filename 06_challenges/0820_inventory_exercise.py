@@ -31,4 +31,40 @@ Hvis du går i stå, så spørg google, de andre elever, en AI eller læreren.
 Når dit program er færdigt, skal du skubbe det til dit github-repository.
 """
 
+def inventorytest(lines):
+    inventory = []
+    if inventory == []:
+        inventory.insert(0, 0)
+        inventory.insert(0, 0)
+        print(inventory)
+        print(lines)
+    for int in inventory:
+        inventory.count(0)
+        print(inventory.count(0), "here")
 
+
+
+
+def inventory(lines):
+    inventory = []
+    globalcount = 0
+    number = 0
+    while lines > globalcount:
+        if not inventory.count(number) == 0:
+            inventory.append((inventory.count(number)))
+            print("insert 1 ", inventory.count(number))
+            print(inventory)
+            number+=1
+
+        elif inventory.count(number) == 0:
+            inventory.append((inventory.count(number)))
+            inventory.append("new line here)")
+            number = 0
+            print(number, "number reset")
+            globalcount += 1
+            print(inventory, "insert 2")
+            print("here")
+
+
+
+inventory(4)
