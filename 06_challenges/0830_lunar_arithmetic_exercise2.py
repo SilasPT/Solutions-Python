@@ -45,37 +45,27 @@ from statistics import linear_regression
 #
 #
 #        return number1
-0830_lunar_arithmetic_exercise.py
-def split(num):
-    digits =[int(d) for d in str(num)]
-    print(digits)
-    if isinstance(digits, list):
-        print("actual list")
-    if isinstance(digits[0], int):
-        print(digits[0], "is a integer")
 
-split(678)
-
-
-class Lunar_int:
-    def _init_(self, num1, num2):
-        self.number1 = num1
-        self.number2 = num2
-    def _add_(self, num1, num2):
-        count= 0
-        digit1 = [int(d) for d in str(self.number1)]
-        digit2 = [int(d) for d in str(self.number2)]
-        if digit1(0+count) > digit2(0+count):
-            count += 1
-            return digit1(0+count)
-        if digit1(0+count) < digit2(0+count):
-            count += 1
-            return digit2(0+count)
-        else:
-            return digit1(0+count)
-
-Number = Lunar_int(25,12)
-
-print(Number)
+# def split(num):
+#     digits =[int(d) for d in str(num)]
+#     print(digits)
+#     if isinstance(digits, list):
+#         print("actual list")
+#     if isinstance(digits[0], int):
+#         print(digits[0], "is a integer")
+# 
+# split(678)
 
 
+class LunarInt:
+    def _init_(self, number1):
+        digit1 = [int(d) for d in str(number1)]
+        self.digit = digit1
+    def _add_(self, other):
+        count(0)
+        if digit1(0+count) == digit2(0+count):
+            return (digit1(0+count))
+
+lunar1 = LunarInt(25)
+
+print(lunar1.digit)

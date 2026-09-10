@@ -52,3 +52,18 @@ Hvis du går i stå, så spørg google, de andre elever, en AI eller læreren.
 
 Når dit program er færdigt, skal du skubbe det til dit github-repository.
 """
+
+def primelist(num):
+    primes = []
+    for num in range(num):
+        count = 1
+        while count < num:
+            if num % 1+count is not num.is_integer():
+                print("false")
+                count += 1
+            else:
+                primes.append(num)
+                print("true")
+                print(primes)
+
+primelist(5)
