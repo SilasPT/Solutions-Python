@@ -58,10 +58,10 @@ from statistics import linear_regression
 
 
 class LunarInt:
-    def _init_(self, number1):
+    def __init__(self, number1):
         digit1 = [int(d) for d in str(number1)]
         self.digit = digit1
-    def _add_(self, other):
+    def __add__(self, other):
         count(0)
         if digit1(0+count) == digit2(0+count):
             return (digit1(0+count))
