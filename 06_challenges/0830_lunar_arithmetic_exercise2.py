@@ -63,9 +63,12 @@ class LunarInt:
         self.digit = digit1
     def __add__(self, other):
         count(0)
-        if digit1(0+count) == digit2(0+count):
-            return (digit1(0+count))
+        if digit1[0+count] >= digit2[0+count]:
+            return digit1[0+count]
 
 lunar1 = LunarInt(25)
-
+lunar2 = LunarInt(40)
+lunar3 = lunar1 + lunar2
 print(lunar1.digit)
+
+print(lunar3.digit)
