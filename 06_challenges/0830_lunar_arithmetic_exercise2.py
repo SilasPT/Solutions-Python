@@ -61,14 +61,36 @@ class LunarInt:
     def __init__(self, number1):
         digit1 = [int(d) for d in str(number1)]
         self.digit = digit1
+        print(digit1)
+        print(self.digit)
     def __add__(self, other):
-        count(0)
-        if digit1[0+count] >= digit2[0+count]:
+        count = 0
+        digit1 = 0
+        print(self.digit, "add")
+        #self.digit = digit1
+        digit2 = other
+        print(self.digit, "1")
+        print(other, "2")
+        #digit2 = [int(d) for d in str(other)]
+        digit3 = []
+        if self.digit[0+count] >= digit2[0+count]:
+            count += 1
+            print(count)
+            print(digit1[0+count], "return1")
+            digit3.append(digit1[0+count])
             return digit1[0+count]
+        if self.digit[0+count] < digit2[0+count]:
+            count += 1
+            print(count)
+            print(digit2[0 + count], "return2")
+            digit3.append(digit2[0 + count])
+            return digit2[0+count]
+        else:
+            print("here")
 
 lunar1 = LunarInt(25)
 lunar2 = LunarInt(40)
 lunar3 = lunar1 + lunar2
 print(lunar1.digit)
 
-print(lunar3.digit)
+print(lunar1 + lunar2)
