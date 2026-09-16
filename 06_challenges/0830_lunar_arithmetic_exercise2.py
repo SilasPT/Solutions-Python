@@ -68,23 +68,22 @@ class LunarInt:
         digit1 = 0
         print(self.digit, "add")
         #self.digit = digit1
-        digit2 = other
         print(self.digit, "1")
         print(other, "2")
-        #digit2 = [int(d) for d in str(other)]
+        #other = [int(d) for d in str(other)]
         digit3 = []
-        if self.digit[0+count] >= digit2[0+count]:
+        if self.digit[0+count] >= other.digit[0+count]:
             count += 1
             print(count)
             print(digit1[0+count], "return1")
             digit3.append(digit1[0+count])
             return digit1[0+count]
-        if self.digit[0+count] < digit2[0+count]:
+        if self.digit[0+count] < other.digit[0+count]:
             count += 1
             print(count)
-            print(digit2[0 + count], "return2")
-            digit3.append(digit2[0 + count])
-            return digit2[0+count]
+            print(other.digit[0 + count], "return2")
+            digit3.append(other.digit[0 + count])
+            return other.digit[0+count]
         else:
             print("here")
 
