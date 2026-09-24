@@ -31,7 +31,7 @@ Når dit program er færdigt, skal du skubbe det til dit github-repository.
 """
 from code import interact
 from hmac import digest
-from itertools import count, zip_longest
+from itertools import count
 from site import addsitedir
 from statistics import linear_regression
 
@@ -68,52 +68,43 @@ class LunarInt:
         return (str(self.digit))
 
     def __add__(self, other):
+        count = 0
+        newcount = 0
+        digit = 0
         #print(self.digit, "add")
-        #print(self.digit, "1")
-        #print(other.digit, "2")
-        digit3=[]
+        print(self.digit, "1")
+        print(other.digit, "2")
         #other = [int(d) for d in str(other)]
-        reversed_self = self.digit[::-1]
-        reversed_other = other.digit[::-1]
-
-        list = zip_longest(reversed_self, reversed_other, fillvalue=0)
-        for x,y in list:
-            if x>=y:
-                digit3.append(x)
-            elif x<y:
-                digit3.append(y)
+        digit3 = []
+        while newcount < 1:
+            if self.digit[0 + count] >= other.digit[0 + count]:
+                newcount += 1
+                #print(count, "count")
+                #print(self.digit[0 + count], "return1")
+                digit3.append(self.digit[0 + count])
+                print(self.digit[0 + count], "first number added")
+                #print(digit3, "3")
+                count += 1
+            elif self.digit[0 + count] < other.digit[0 + count]:
+                newcount += 1
+                #print(count, "count")
+                #print(other.digit[0 + count], "return2")
+                digit3.append(other.digit[0 + count])
+                print(other.digit[0 + count], "second number added")
+                #print(digit3, "3")
+                count += 1
             else:
-                print("fælse")
-        fin_list = (digit3[::-1])
-        fin_svar = int("".join(map(str, fin_list)))
-        return(fin_svar)
-    def __mul__(self, other):
-        digit3=[]
-        reversed_self = self.digit[::-1]
-        reversed_other = other.digit[::-1]
-        list = zip_longest(self.digit, other.digit, fillvalue=0)
-        for x,y in list:
-            if x>=y:
-                digit3.append(y)
-            elif x<y:
-                digit3.append(x)
-            else:
-                print("guh?")
+                print("here")
+                print(digit3)
+                return (digit3)
+        print(digit3, "end")
 
 
-
-
-
-
-
-
-lunar1 = LunarInt(402)
-lunar2 = LunarInt(1331)
+lunar1 = LunarInt(40)
+lunar2 = LunarInt(45)
 lunar3 = lunar1 + lunar2
-#print(lunar3)
-#print(lunar1)
-#print(lunar2)
+print(lunar1)
+print(lunar2)
+print(lunar3)
 
-print(lunar1 + lunar2, "finish1")
-print(lunar3, "finish2")
-print(lunar1 * lunar2, "finish3")
+#print(lunar1 + lunar2, "finish")
