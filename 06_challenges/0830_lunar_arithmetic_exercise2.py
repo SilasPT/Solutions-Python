@@ -91,7 +91,7 @@ class LunarInt:
         digit3=[]
         reversed_self = self.digit[::-1]
         reversed_other = other.digit[::-1]
-        list = zip_longest(self.digit, other.digit, fillvalue=0)
+        list = zip_longest(reversed_self, reversed_other, fillvalue=10)
         for x,y in list:
             if x>=y:
                 digit3.append(y)
@@ -99,6 +99,9 @@ class LunarInt:
                 digit3.append(x)
             else:
                 print("guh?")
+        fin_list = (digit3[::-1])
+        fin_svar = int("".join(map(str, fin_list)))
+        return(fin_svar)
 
 
 
@@ -108,12 +111,13 @@ class LunarInt:
 
 
 lunar1 = LunarInt(402)
-lunar2 = LunarInt(1331)
+lunar2 = LunarInt(9331)
 lunar3 = lunar1 + lunar2
+lunar4 = lunar1 * lunar2
 #print(lunar3)
 #print(lunar1)
 #print(lunar2)
 
-print(lunar1 + lunar2, "finish1")
-print(lunar3, "finish2")
+#print(lunar1 + lunar2, "finish1")
+#print(lunar3, "finish2")
 print(lunar1 * lunar2, "finish3")
