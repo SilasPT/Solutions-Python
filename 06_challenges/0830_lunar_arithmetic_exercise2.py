@@ -110,8 +110,8 @@ class LunarInt:
 
 
 
-lunar1 = LunarInt(402)
-lunar2 = LunarInt(9331)
+lunar1 = LunarInt(12402)
+lunar2 = LunarInt(331)
 lunar3 = lunar1 + lunar2
 lunar4 = lunar1 * lunar2
 #print(lunar3)
