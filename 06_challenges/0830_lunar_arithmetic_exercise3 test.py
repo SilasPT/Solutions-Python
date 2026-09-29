@@ -61,8 +61,8 @@ class LunarInt:
     def __init__(self, number1):
         digit1 = [int(d) for d in str(number1)]
         self.digit = digit1
-        #print(digit1)
-        #print(self.digit)
+        print(digit1)
+        #print(self.digit, "self")
 
     def __repr__(self):
         return (str(self.digit))
@@ -88,20 +88,39 @@ class LunarInt:
         fin_svar = int("".join(map(str, fin_list)))
         return(fin_svar)
     def __mul__(self, other):
+        print(self.digit, "self")
+        print(other.digit, "other")
         digit3=[]
-        reversed_self = self.digit[::-1]
-        reversed_other = other.digit[::-1]
-        list = zip_longest(reversed_self, reversed_other, fillvalue=10)
-        for x,y in list:
-            if x>=y:
-                digit3.append(y)
-            elif x<y:
-                digit3.append(x)
-            else:
-                print("guh?")
-        fin_list = (digit3[::-1])
-        fin_svar = int("".join(map(str, fin_list)))
-        return(fin_svar)
+        finlist =[]
+        count=0
+        y=other.digit
+        print(len(y))
+
+        for x in self.digit:
+            while len(y) > count:
+                if x >= y[0 + count]:
+                    digit3.append(y[0 + count])
+                    print(y[0 + count], "added")
+                    count += 1
+                elif x < y[0 + count]:
+                    digit3.append(x)
+                    print(x, "added")
+                    count += 1
+                else:
+                    print("guh?")
+            count=0
+            finlist.append(digit3)
+            digit3=[]
+
+
+
+        #list1 = digit3.copy()
+        #print(digit3, "digit3")
+        #print(list1, "list1")
+
+        #fin_list = (digit3[::-1])
+        #fin_svar = int("".join(map(str, fin_list)))
+        return(finlist)
 
 
 
@@ -110,14 +129,14 @@ class LunarInt:
 
 
 
-lunar1 = LunarInt(12402)
-lunar2 = LunarInt(331)
-lunar3 = lunar1 + lunar2
-lunar4 = lunar1 * lunar2
+lunar1 = LunarInt(169)
+lunar2 = LunarInt(248)
+#lunar3 = lunar1 + lunar2
+#lunar4 = lunar1 * lunar2
 #print(lunar3)
 #print(lunar1)
 #print(lunar2)
 
-#print(lunar1 + lunar2, "finish1")
+print(lunar1 + lunar2, "finish1")
 #print(lunar3, "finish2")
 print(lunar1 * lunar2, "finish3")
