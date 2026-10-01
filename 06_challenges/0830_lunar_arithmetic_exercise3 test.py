@@ -91,10 +91,10 @@ class LunarInt:
         print(self.digit, "self")
         print(other.digit, "other")
         digit3=[]
-        finlist =[]
+        list =[]
         count=0
         localcount = 0
-        listlen = len(other.digit)-1
+        listlen = 0
         y=self.digit
         print(len(y))
 
@@ -111,24 +111,19 @@ class LunarInt:
                 else:
                     print("guh?")
             while listlen> localcount:
-                digit3.append(0)
+                digit3.insert(0,0)
                 localcount += 1
             localcount=0
-            listlen -= 1
+            listlen += 1
             count=0
-            finlist.append(digit3)
+            list.append(digit3)
             digit3=[]
-       # for x in finlist:
-       #     print(x)
-       #     print("this")
 
-        #list1 = digit3.copy()
-        #print(digit3, "digit3")
-        #print(list1, "list1")
-        #fin_list = (digit3[::-1])
-        #fin_svar = int("".join(map(str, fin_list)))
-
-        return(finlist)
+        print(list, "list")
+        fin_list = [max(tal) for tal in zip_longest(*list, fillvalue=0)]
+        print(fin_list, "fin_list")
+        fin_svar = int("".join(map(str, fin_list)))
+        return(fin_svar)
 
 
 
@@ -145,6 +140,6 @@ lunar2 = LunarInt(331)
 #print(lunar1)
 #print(lunar2)
 
-print(lunar1 + lunar2, "finish1")
+#print(lunar1 + lunar2, "finish1")
 #print(lunar3, "finish2")
-print(lunar1 * lunar2, "finish3")
+print(lunar1 * lunar2)
